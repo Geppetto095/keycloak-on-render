@@ -26,6 +26,6 @@ ENV KC_DB_PASSWORD=${KC_DB_PASSWORD}
 ENV KC_HOSTNAME=${KC_HOSTNAME}
 
 # Set the working directory to where the kc.sh script is located
-WORKDIR /opt/keycloak/bin
+WORKDIR /opt/keycloak
 
-CMD ["./kc.sh", "start-dev"]
+CMD ["/opt/keycloak/bin/kc.sh", "start-dev"]
