@@ -21,6 +21,10 @@ ENV KC_DB_URL=${KC_DB_URL}
 ENV KC_DB_USERNAME=${KC_DB_USERNAME}
 ENV KC_DB_PASSWORD=${KC_DB_PASSWORD}
 ENV KC_HOSTNAME=${KC_HOSTNAME}
+ENV KC_HOSTNAME_PORT=10000
+
+# Expose the required port for Render
+EXPOSE 10000
 
 # Set the working directory to where the kc.sh script is located
 WORKDIR /opt/keycloak/bin
