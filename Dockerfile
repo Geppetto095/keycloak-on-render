@@ -28,4 +28,4 @@ ENV KC_HOSTNAME=${KC_HOSTNAME}
 # Set the working directory to where the kc.sh script is located
 WORKDIR /opt/keycloak/bin
 
-ENTRYPOINT ["./kc.sh", "start-dev"]
+CMD ["./kc.sh", "start-dev"]
