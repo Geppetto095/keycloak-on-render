@@ -1,12 +1,10 @@
-FROM quay.io/keycloak/keycloak:23.0.4
+FROM quay.io/keycloak/keycloak:24.0.1
 
-ENV KC_HTTP_PORT=${PORT}
+ENV KEYCLOAK_ADMIN=admin
+ENV KEYCLOAK_ADMIN_PASSWORD=admin
+
+RUN /opt/keycloak/bin/kc.sh build
+
 EXPOSE ${PORT}
-
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized"]
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 1e998bc (Fix: aggiunto ENTRYPOINT e porta dinamica per Render)
+CMD ["start", "--http-port=${PORT}", "--optimized"]
