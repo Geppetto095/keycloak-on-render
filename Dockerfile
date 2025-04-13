@@ -5,3 +5,8 @@ EXPOSE ${PORT}
 
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
 CMD ["start", "--optimized"]
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1e998bc (Fix: aggiunto ENTRYPOINT e porta dinamica per Render)
