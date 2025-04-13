@@ -1,11 +1,7 @@
-# Usa l'immagine ufficiale di Keycloak come base
 FROM quay.io/keycloak/keycloak:23.0.4
 
-# Imposta la variabile di ambiente per la porta
-ENV PORT=10000
-
-# Espone la porta configurata
+ENV KC_HTTP_PORT=${PORT}
 EXPOSE ${PORT}
 
-# Esegui Keycloak con la porta dinamica
-CMD ["start", "--http-port=${PORT}"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
+CMD ["start", "--optimized"]
