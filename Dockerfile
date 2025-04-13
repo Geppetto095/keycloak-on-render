@@ -10,3 +10,4 @@ RUN /opt/keycloak/bin/kc.sh build
 ENV KC_HTTP_PORT=${PORT}
 
 CMD [ "start-dev" ]
+EXPOSE 8080
