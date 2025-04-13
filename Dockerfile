@@ -14,6 +14,7 @@ RUN /opt/keycloak/bin/kc.sh build
 
 # Ensure the script is executable
 RUN chmod +x /opt/keycloak/bin/kc.sh
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=$PORT"]
 
 # Environment variables for database configuration
 ENV KC_DB=${KC_DB}
