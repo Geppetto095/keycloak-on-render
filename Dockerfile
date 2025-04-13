@@ -6,5 +6,6 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 RUN /opt/keycloak/bin/kc.sh build
 
 EXPOSE ${PORT}
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
+CMD ["start-dev", "--http-port=${PORT}", "--hostname-strict=false", "--hostname=0.0.0.0"]
 
-ENTRYPOINT [ "/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=${PORT}", "--hostname-strict=false" ]
