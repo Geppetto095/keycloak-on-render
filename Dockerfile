@@ -7,4 +7,4 @@ RUN /opt/keycloak/bin/kc.sh build
 
 EXPOSE ${PORT}
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--http-port=${PORT}", "--hostname-strict=false", "--hostname=0.0.0.0"]
+CMD ["start-dev", "--http-port=${PORT}", "--hostname-strict=false", "--hostname=0.0.0.0"]
