@@ -9,5 +9,5 @@ RUN /opt/keycloak/bin/kc.sh build
 # Render imposta dinamicamente la porta in $PORT
 ENV KC_HTTP_PORT=${PORT}
 
-CMD [ "start-dev" ]
+CMD ["start", "--http-port=${PORT}"]
 EXPOSE 8080
