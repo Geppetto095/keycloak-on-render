@@ -5,6 +5,7 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
 RUN /opt/keycloak/bin/kc.sh build
 
-# Render richiede CMD e non ENTRYPOINT per eseguire correttamente
-CMD ["start-dev", "--http-port=${PORT}"]
+EXPOSE 8080
 
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
+CMD ["start-dev", "--http-port=8080"]
